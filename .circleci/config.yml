@@ -12,11 +12,6 @@ jobs:
           name: Node dependencies
           command: sudo npm install -g firebase-tools
 
-      - save_cache:
-          paths:
-            - /usr/local/bundle
-            - /usr/local/lib/node_modules
-
       - run:
           name: Deploy
           command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
