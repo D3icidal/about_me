@@ -8,10 +8,6 @@ jobs:
     steps:
       - checkout
 
-      - restore_cache:
-          keys:
-          - v2-dependencies-
-
       - run:
           name: Node dependencies
           command: sudo npm install -g firebase-tools
