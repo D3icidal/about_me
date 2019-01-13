@@ -2,6 +2,31 @@ body {
   font-family: 'Anonymous Pro', monospace;
 }
 
-.header {
-  padding-top: 20px;
+@media screen and (min-width: 1060px) {
+  .index-main {
+    width: 700px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+@media screen and (max-width: 1059px) {
+  .index-main {
+    height: 100vh;
+    margin-top: 20px;
+  }
+
+  .row.buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .row.buttons > * {
+    flex: 1;
+    margin-right: 8px;
+  }
 }
