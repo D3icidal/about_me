@@ -30,3 +30,11 @@ body {
     margin-right: 8px;
   }
 }
+
+.margin-top {
+  margin-top: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+}
