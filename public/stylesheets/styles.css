@@ -1,5 +1,6 @@
 body {
   font-family: 'Anonymous Pro', monospace;
+  background-color: #FFF;
 }
 
 @media screen and (min-width: 1060px) {
