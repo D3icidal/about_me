@@ -15,7 +15,3 @@ jobs:
       - run:
           name: Deploy
           command: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
-
-      filters:
-          branches:
-              only: master
