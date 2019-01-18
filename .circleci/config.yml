@@ -2,9 +2,9 @@ version: 2
 jobs:
   build:
     filters:
-        branches:
-            only:
-              - master
+      branches:
+        only:
+          - master
     docker:
       - image: circleci/ruby:2.4-node
     working_directory: ~/repo
