@@ -17,6 +17,7 @@ function freezeChildHeights(parentElement) {
 function unwantedLettersRemaining(parentElement){
   return false;
   // return false if any parentElement.child contains a span without a class
+  
 };
 
 function destroyPage() {
