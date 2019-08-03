@@ -1,14 +1,14 @@
-// function destroyThisPage(){
-//   hideButtons()
-//   spanEachHideableChar(hideWords)
-//   toggleDestroyRestoreButton(document.getElementById("destroyButton"))
-// }
-//
-// function restoreThisPage(){
-//   showButtons()
-//   showWords()
-//   toggleDestroyRestoreButton(document.getElementById("destroyButton"))
-// }
+function destroyThisPage(){
+  hideButtons()
+  spanEachHideableChar(hideWords)
+  toggleDestroyRestoreButton(document.getElementById("destroyButton"))
+}
+
+function restoreThisPage(){
+  showButtons()
+  showWords()
+  toggleDestroyRestoreButton(document.getElementById("destroyButton"))
+}
 
 //Redudent pointers! make allButtons variable the live pointer
 function disableAllButtons(){
