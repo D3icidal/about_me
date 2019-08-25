@@ -39,3 +39,7 @@ body {
 a {
   text-decoration: none;
 }
+
+.hidden {
+  display: none;
+}
