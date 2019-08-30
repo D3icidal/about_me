@@ -3,6 +3,11 @@ body {
   background-color: #FFF;
 }
 
+strong {
+  font-weight: 700
+
+}
+
 @media screen and (min-width: 1060px) {
   .index-main {
     width: 700px;
@@ -38,8 +43,4 @@ body {
 
 a {
   text-decoration: none;
-}
-
-.hidden {
-  display: none;
 }
