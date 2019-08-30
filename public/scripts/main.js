@@ -470,6 +470,7 @@ function revealCodeWords(){
 
     // }, 150)
 
+
 function colorProtected(color) {
   var protectedColors = [
     '1EAEDB', // link color (hex)
@@ -479,6 +480,7 @@ function colorProtected(color) {
   ]
 
   return (protectedColors.indexOf(color) > -1)
+
 }
 
 $(document).ready(function(){
