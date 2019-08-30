@@ -1,71 +1,82 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head>
+	<meta charset="utf-8">
 
-    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-    <link rel="stylesheet" href="./stylesheets/normalize.css">
-    <link rel="stylesheet" href="./stylesheets/skeleton.css">
-    <link rel="stylesheet" href="./stylesheets/styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:700,400" rel="stylesheet">
 
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+	<link rel="stylesheet" href="./stylesheets/normalize.css">
+	<link rel="stylesheet" href="./stylesheets/skeleton.css">
+	<link rel="stylesheet" href="./stylesheets/styles.css">
 
-    <!-- Browser window icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+	 crossorigin="anonymous">
 
-    <title>Thomas Ng - About Me</title>
-  </head>
+	<!-- Browser window icon -->
+	<!-- <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico"> -->
 
-  <body>
-    <div class="container index-main">
-      <div class="row">
-        <div class="twelve columns">
-          <div class="row header">
-            <h2>Hi There, I'm Thomas</h2>
-          </div>
+	<title>Thomas Ng - About Me</title>
+</head>
 
-          <div class="row intro">
+<body>
+	<div class="container index-main">
+		<div class="row">
+			<div class="twelve columns">
+				<div class="row header" id="hi">
+					<h2 class='hideable'>Hi There, I'm Thomas</h2>
+				</div>
+
+				<div class="row intro" >
+					<span>
+						<p class="bodytext" id="elevator pitch">
+							<span class='hideable' id="bio">I'm a Systems Admin turned Software Engineer.</span></br>
+								<span class='hideable'>I'm an</span>
+							<span class='hideable'><a href="http://anyonecanlearntocode.com/online-coding-bootcamp" target="_blank">Actualize</a>
+							graduate seeking my next role in software.
+						</span>
+						</p>
+					</span>
+					<p>
+            <div class="bodytext hideable" id="bio">I'm primarily passionate about backend development, but my hardware background has made me excited, curious, and appreciative
+						of the ways web technologies welcome and rely on our flexibility and creativity to build products. I'm seeking a place on a pragmatic
+						team that loves shipping and learning, ideally in that order.
+					</div></p>
+					<p class='hideable'><strong>
+						&#9758; Are you hiring developers? Let's talk!</strong>
+          </p>
             <p>
-              <span>I'm a Systems Admin turned Software Engineer.</span>
-              </br>
-              <span>I'm an</span>
-              <a href="http://anyonecanlearntocode.com/online-coding-bootcamp" target="_blank">Actualize</a>
-              <span>graduate seeking my next role in software.</span>
-            </p>
-            <p>
-              I'm primarily passionate about backend development, but my hardware background has made me excited, curious, and appreciative of the ways web technologies rely on our flexibility and creativity to build products. I'm seeking a place on a pragmatic team that loves shipping and learning, ideally in that order.
-            </p>
-            <p>
-              Are you hiring developers? Let's talk!
-              <br>
               email: <a href="mail:thomasjeffreyng@gmail.com">thomasjeffreyng@gmail.com</a>
+              <br>
+              resume: <a href="https://resume.creddle.io/resume/cpf3lycv1ol" target="_blank">view resume</a>
             </p>
           </div>
 
           <div class="row buttons">
-            <a href="https://www.linkedin.com/in/thomasjng/" target="_blank" class="button linkedin">
+            <a href="https://www.linkedin.com/in/thomasjng/" target="_blank" class="button linkedin hideableButton" id="linkedinButton">
               <i class="fab fa-linkedin"></i>
               Linkedin
             </a>
-            <a href="https://github.com/D3icidal" target="_blank" class="button github">
+            <a href="https://github.com/D3icidal" target="_blank" class="button github hideableButton" id="githubButton">
               <i class="fab fa-github"></i>
               Github
             </a>
-            <button type="button" class="hidden" name="destroyButton">Destroy this page</button>
-            <!-- <button type="button" name="invertColorsButton">Invert colors</button> -->
+            <button type="button" onclick="destroyThisPage()" class="button destroyButton"			id="destroyButton">Destroy this page</button>
+
+            <button type="button" class="button invert-theme hideableButton" id="invertButton">Invert colors</button>
           </div>
         </div>
       </div>
     </div>
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.js"
-      integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
+    <script type="text/javascript" src="./scripts/rgbcolor.js"></script>
     <script type="text/javascript" src="./scripts/main.js"></script>
-    <script type="text/javascript" src="./scripts/destroyPage.js"></script>
   </body>
 </html>
