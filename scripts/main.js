@@ -90,6 +90,9 @@ function toggleDestroyRestoreButton(destroyButton){
     var increment = 5 // letter changes for each char //speed of whole
 
     var si = 0;
+    // var stri = 0;
+    // var block = "";
+    // var fixed = "";
     var stri = 0;
     var block = "";
     var fixed = "";
