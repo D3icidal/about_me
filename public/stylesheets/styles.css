@@ -8,6 +8,13 @@ strong {
 
 }
 
+.inverted {
+  filter: invert(100%);
+}
+
+.thick{
+  font-weight: bold;
+}
 @media screen and (min-width: 1060px) {
   .index-main {
     width: 700px;

@@ -140,11 +140,12 @@ function colorProtected(color) {
 
 }
 
-$(document).ready(function(){
+//JQuery Practice to invert colors on page
 
+$(document).ready(function(){
   $(".invert-theme").click(function(e){
     var colorProperties = ['color', 'background-color']
-    $.each($("*"), function() {
+    $.each($("*").not(".hideableChar"), function() {
       var color = null
       var currentColor = null
 

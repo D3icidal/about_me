@@ -76,11 +76,11 @@ function hideWords(){
       // easing: "easeInOutQuad",
       easing: 'linear',
       // easing: 'easeInOutSine',
-      duration: 750,
+      duration: 500,
       // delay: anime.stagger(50)
       delay: function(el, i) {
         // return 50 * (i+1)
-        return 10 * (i+1)
+        return 6 * (i+1)
       },
       complete: function(){
         revealCodeWords()
@@ -96,8 +96,8 @@ function showWords(){
       easing: "easeInOutQuad",
       // easing: 'linear',
       // easing: 'easeInOutSine',
-      duration: 850,
-      delay: anime.stagger(10)
+      duration: 700,
+      delay: anime.stagger(6)
       // delay: function(el, i) {
       //   // return 50 * (i+1)
       //   return 10 * (i+1)
@@ -111,8 +111,8 @@ function revealCodeWords(){
     targets: '.hideable .codeLetters',
     opacity: [0,1],
     easing: "easeInOutQuad",
-    duration: 850,
-    delay: anime.stagger(50),
+    duration: 750,
+    delay: anime.stagger(40),
     // delay: function(el, i) {
     //   // return 50 * (i+1)
     //   return 100 * (i + 1)
