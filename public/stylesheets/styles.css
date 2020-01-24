@@ -1,6 +1,7 @@
 body {
   font-family: 'Anonymous Pro', monospace;
   background-color: #FFF;
+  /* background-color: blue; */
 }
 
 strong {
@@ -15,6 +16,7 @@ strong {
 .thick{
   font-weight: bold;
 }
+
 @media screen and (min-width: 1060px) {
   .index-main {
     width: 700px;
