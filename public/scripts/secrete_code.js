@@ -1,126 +1,109 @@
+// Function to destroy the current page and reveal a hidden message
 function destroyThisPage(){
-  var code = 'Hire Thomas SystemsAdmin SoftwareEngineer' //Letters to reveal
-  hideButtons()
-  spanEachHideableChar(hideWords, code)
-  toggleDestroyRestoreButton(document.getElementById("destroyButton"))
+  var code = 'Hire Thomas You want to hire me'; // Letters to reveal
+  hideButtons();
+  spanEachHideableChar(hideWords, code);
+  toggleDestroyRestoreButton(document.getElementById("destroyButton"));
 }
 
+// Function to restore the original page
 function restoreThisPage(){
-  showButtons()
-  showWords()
-  toggleDestroyRestoreButton(document.getElementById("destroyButton"))
+  showButtons();
+  showWords();
+  toggleDestroyRestoreButton(document.getElementById("destroyButton"));
 }
 
-// }
-
+// Parse the input string into lowercase characters
 function parseCodeLetters( codeLetters ) {
-  return codeLetters.toLowerCase().split("")
+  return codeLetters.toLowerCase().split("");
 }
 
-// $(".destroyButton").click(function(e){
+// Function to process each character in the input string
 function spanEachHideableChar(callback, code) {
+  
+  var codeLetters = parseCodeLetters(code);
 
-  var codeLetters = parseCodeLetters(code)
-
-  // var $text = $('.hideable')
-
-  var hideableSections = document.getElementsByClassName('hideable')
+  // Get all elements with class 'hideable'
+  var hideableSections = document.getElementsByClassName('hideable');
+  
   for (let hideableString of hideableSections) {
+      var parsedSpannedHTML = document.createElement('span');
+      parsedSpannedHTML.classList.add('hideable_section');
 
-    var parsedSpannedHTML = document.createElement('span')
-    parsedSpannedHTML.classList.add('hideable_section')
-
-  //add hideable to entire child for innerhtml elements like links
-    innerHTMLChildren = hideableString.children
-    if (innerHTMLChildren.length > 0){
-      for (let i = 0; i < innerHTMLChildren.length; i++) {
-        innerHTMLChildren[i].classList.add('codeLetters')
+      // Add 'codeLetters' class to innerHTML children
+      innerHTMLChildren = hideableString.children;
+      if (innerHTMLChildren.length > 0){
+          for (let i = 0; i < innerHTMLChildren.length; i++) {
+              innerHTMLChildren[i].classList.add('codeLetters');
+          }
       }
-    }
 
-    for (let charI = 0; charI < hideableString.innerText.length + 1; charI++) {
+      for (let charI = 0; charI < hideableString.innerText.length + 1; charI++) {
+          
+          var hiddenCharSpan = document.createElement('span');
+          hiddenCharSpan.classList.add('hideableChar');
 
-      var hiddenCharSpan = document.createElement('span')
-      hiddenCharSpan.classList.add('hideableChar')
+          var hiddenChar = document.createTextNode(hideableString.innerText.charAt(charI));
+          hiddenCharSpan.append(hiddenChar);
 
-      var hiddenChar = document.createTextNode(hideableString.innerText.charAt(charI))
-      hiddenCharSpan.append(hiddenChar)
+          // Check if the current character matches the next letter in the code
+          if (hideableString.innerText.charAt(charI).toLowerCase() == codeLetters[0]) {
+              hiddenCharSpan.classList.add('codeLetters');
+              codeLetters.shift();
+          }
 
-      if (hideableString.innerText.charAt(charI).toLowerCase() == codeLetters[0]) {
-        // hiddenCharSpan.classList = 'codeLetters'
-        hiddenCharSpan.classList.add('codeLetters')
-        codeLetters.shift()
-        // console.log(codeLetters)
+          parsedSpannedHTML.append(hiddenCharSpan);
       }
-      // console.log(hiddenCharSpan.innerText)
-      parsedSpannedHTML.append(hiddenCharSpan)
 
-    }
-
-      hideableString.innerHTML = parsedSpannedHTML.innerHTML
-
+      hideableString.innerHTML = parsedSpannedHTML.innerHTML;
   }
+
+  // Call the callback function if provided
   if (typeof callback === "function"){
-    callback()
+      callback();
   }
-    // $( this.innerHTML.innerText ).wrap("<span class='trans'></span>").
-    // remaindingString.innerText = this.innerText.substring(charI + 1, this.innerText.length - 1)
-    // console.log(parsedSpannedHTML.innerHTML)
 }
 
+// Function to hide words using anime.js animation
 function hideWords(){
   anime.timeline({loop: false})
-    .add({
-      targets: '.hideable .hideableChar',
-      opacity: [1,0],
-      // easing: "easeInOutQuad",
-      easing: 'linear',
-      // easing: 'easeInOutSine',
-      duration: 500,
-      // delay: anime.stagger(50)
-      delay: function(el, i) {
-        // return 50 * (i+1)
-        return 6 * (i+1)
-      },
-      complete: function(){
-        revealCodeWords()
-      }
-    })
+      .add({
+          targets: '.hideable .hideableChar',
+          opacity: [1,0],
+          easing: 'linear',
+          duration: 500,
+          delay: function(el, i) {
+              return 2 * (i+1);
+          },
+          complete: function(){
+              revealCodeWords()
+          }
+      })
 }
 
+// Function to show hidden words using anime.js animation
 function showWords(){
   anime.timeline({loop: false})
-    .add({
-      targets: '.hideable .hideableChar:not(.codeLetters) ',
-      opacity: [0,1],
-      easing: "easeInOutQuad",
-      // easing: 'linear',
-      // easing: 'easeInOutSine',
-      duration: 700,
-      delay: anime.stagger(6)
-      // delay: function(el, i) {
-      //   // return 50 * (i+1)
-      //   return 10 * (i+1)
-      // },
-    })
+      .add({
+          targets: '.hideable .hideableChar:not(.codeLetters)',
+          opacity: [0,1],
+          easing: "easeInOutQuad",
+          duration: 400,
+          delay: anime.stagger(20)
+      })
 }
 
+// Function to reveal code letters using anime.js animation
 function revealCodeWords(){
   anime.timeline({loop: false})
   .add({
-    targets: '.hideable .codeLetters',
-    opacity: [0,1],
-    easing: "easeInOutQuad",
-    duration: 750,
-    delay: anime.stagger(40),
-    // delay: function(el, i) {
-    //   // return 50 * (i+1)
-    //   return 100 * (i + 1)
-    // }
+      targets: '.hideable .codeLetters',
+      opacity: [0,1],
+      easing: "easeInOutQuad",
+      duration: 500,
+      delay: anime.stagger(30),
   })
 }
-
-
 
 
 
