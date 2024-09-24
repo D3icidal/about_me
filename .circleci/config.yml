@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Firebase Tools
-          command: npm install -g firebase-tools
+          command: sudo npm install -g firebase-tools
       - run:
           name: Deploy
           command: |
