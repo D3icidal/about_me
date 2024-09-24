@@ -1,16 +1,5 @@
 {
   "projects": {
     "default": "aboutme-c2b58"
-  },
-  "targets": {
-    "aboutme-c2b58": {
-      "hosting": {
-        "AboutMe": [
-          "aboutme-c2b58"
-        ]
-      }
-    }
-  },
-  "etags": {},
-  "dataconnectEmulatorConfig": {}
+  }
 }
