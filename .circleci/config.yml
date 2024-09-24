@@ -11,10 +11,7 @@ jobs:
           command: sudo npm install -g firebase-tools
       - run:
           name: Deploy
-          command: |
-            # echo $FIREBASE_SERVICE_ACCOUNT > credentials.json
-            # GOOGLE_APPLICATION_CREDENTIALS=credentials.json firebase deploy
-            GOOGLE_APPLICATION_CREDENTIALS=credentials.json firebase deploy
+          command: firebase deploy
           environment:
             GOOGLE_APPLICATION_CREDENTIALS: $FIREBASE_SERVICE_ACCOUNT
           
