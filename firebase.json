@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "target": "ThomasNg_AboutMe",
+    "target": "AboutMe",
     "public": "public",
     "ignore": [
       "firebase.json",
