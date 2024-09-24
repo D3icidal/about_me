@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/ruby:3.3.5
+      - image: cimg/ruby:3.3.5-node
     working_directory: ~/repo
     steps:
       - checkout
