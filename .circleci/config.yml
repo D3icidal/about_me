@@ -13,7 +13,7 @@ jobs:
           name: Deploy
           command: |
             echo $FIREBASE_SERVICE_ACCOUNT > credentials.json
-            GOOGLE_APPLICATION_CREDENTIALS=credentials.json firebase deploy --non-interactive
+            GOOGLE_APPLICATION_CREDENTIALS=credentials.json firebase deploy
           
 workflows:
   version: 2
