@@ -13,7 +13,7 @@ jobs:
           name: Deploy
           command: |
             echo $FIREBASE_SERVICE_ACCOUNT > credentials.json
-            firebase deploy
+            firebase deploy --only hosting:AboutMe
           environment:
             GOOGLE_APPLICATION_CREDENTIALS: credentials.json
           
