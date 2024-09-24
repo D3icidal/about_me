@@ -88,8 +88,8 @@ function showWords(){
           targets: '.hideable .hideableChar:not(.codeLetters)',
           opacity: [0,1],
           easing: "easeInOutQuad",
-          duration: 400,
-          delay: anime.stagger(20)
+          duration: 50,
+          delay: anime.stagger(5)
       })
 }
 
@@ -100,8 +100,8 @@ function revealCodeWords(){
       targets: '.hideable .codeLetters',
       opacity: [0,1],
       easing: "easeInOutQuad",
-      duration: 500,
-      delay: anime.stagger(30),
+      duration: 750,
+      delay: anime.stagger(100),
   })
 }
 
